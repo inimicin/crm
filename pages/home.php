@@ -20,7 +20,7 @@ include('../script/customer.php');
     <script src="https://kit.fontawesome.com/eff27b1688.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-dark" style="position: relative;height: 100vh;">
+<body class="bg-dark" style="position: relative;height: 100vh;width: 100vw;">
     <main-header active="home"></main-header>
     <div class="container-fluid w-100 p-0">
         <div class="container" style="width: fit-content;margin-bottom: 100px !important;">
