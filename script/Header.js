@@ -22,7 +22,7 @@ class Header extends HTMLElement {
             </button>
 
             <div class="collapse navbar-collapse mx-3" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link ${this.getAttribute('active') == 'home' ? 'active' : ''}" href="./home.php">Home</a>
                     </li>
@@ -33,8 +33,10 @@ class Header extends HTMLElement {
                         <a class="nav-link ${this.getAttribute('active') == 'produk_data' ? 'active' : ''}" href="./produk_data.php">Data Produk</a>
                     </li>
                 </ul>
+                <a href="./login.php" class="d-flex link-underline link-underline-opacity-0"><button type="button" class="btn btn-danger">Logout</button></a>
             </div>
         </nav>
+
         `;
   }
 }
