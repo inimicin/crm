@@ -26,7 +26,7 @@ include('../script/customer.php');
         <div class="container" style="width: fit-content;margin-bottom: 100px !important;">
             <ul class="p-0">
                 <li>
-                    <h2 style="color: white;font-weight: bold;position: absolute;margin-top: 100px;transform: translate(-50%, 0);">Selamat Datang!</h2>
+                    <h2 style="color: white;font-weight: bold;position: absolute;margin-top: 130px;transform: translate(-50%, 0);">Selamat Datang!</h2>
                 </li>
             </ul>
             <div class="row" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
