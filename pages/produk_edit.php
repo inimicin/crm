@@ -1,6 +1,12 @@
 <?php
 include('../script/produk.php');
 
+session_start();
+
+if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
+    header("location: ../index.php");
+}
+
 $result = get_data_produk_by_id($_GET['id']);
 
 if(isset($_POST['submit'])) {

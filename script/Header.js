@@ -33,7 +33,7 @@ class Header extends HTMLElement {
                         <a class="nav-link ${this.getAttribute('active') == 'produk_data' ? 'active' : ''}" href="./produk_data.php">Data Produk</a>
                     </li>
                 </ul>
-                <a href="./login.php" class="d-flex link-underline link-underline-opacity-0"><button type="button" class="btn btn-danger"  style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 5p; border: none;"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</button></a>
+                <a href="../script/end-sesssion.php" class="d-flex link-underline link-underline-opacity-0"><button type="button" class="btn btn-danger"  style="--bs-btn-padding-y: 5px; --bs-btn-padding-x: 5p; border: none;"><i class="fa-solid fa-right-from-bracket me-2"></i> Logout</button></a>
             </div>
         </nav>
 

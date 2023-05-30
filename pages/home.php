@@ -3,6 +3,12 @@
 include('../script/produk.php');
 include('../script/customer.php');
 
+session_start();
+
+if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
+    header("location: ../index.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

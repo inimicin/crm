@@ -4,7 +4,9 @@ include('../script/account.php');
 
 if (isset($_POST['submit'])) {
 
-  if(auth($_POST['email_address'], $_POST['password'])) {
+  if (auth($_POST['email_address'], $_POST['password'])) {
+    session_id('admin');
+    session_start();
     header('location: ./home.php');
   }
 }
@@ -31,7 +33,6 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body style="background-color: black">
-  <main-header active="register"></main-header>
   <div class="container-fluid main-body w-100" style="height: 100vh">
     <div class="container-fluid form-container px-5" style="
           width: 40%;
@@ -42,7 +43,7 @@ if (isset($_POST['submit'])) {
           transform: translate(-50%, -50%);
         ">
       <form method="POST" action='./login.php'>
-        <h2 class="text-center" style="color: white; margin-bottom: 70px;">Register Now</h2>
+        <h2 class="text-center" style="color: white; margin-bottom: 70px;">Login</h2>
         <div class="mb-3">
           <label for="email_address" class="form-label" style="color: white;">Email Address</label>
           <input type="email" class="form-control" id="email_address" name="email_address">

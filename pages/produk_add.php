@@ -1,6 +1,12 @@
 <?php
 include('../script/produk.php');
 
+session_start();
+
+if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
+    header("location: ../index.php");
+}
+
 if(isset($_POST['submit'])) {
     $status = save_data_produk($_POST['nama_produk'], $_POST['harga']);
 

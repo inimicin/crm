@@ -1,6 +1,12 @@
 <?php
 include('../script/customer.php');
 
+session_start();
+
+if(!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")){
+    header("location: ../index.php");
+}
+
 if(isset($_POST['submit'])) {
     $status = save_data_customer($_POST['nama_depan'], $_POST['nama_belakang'], $_POST['email'], $_POST['no_telepon'], $_POST['alamat']);
 
