@@ -23,13 +23,14 @@ a:hover {
 }
 
 input, textarea {
-    color: white !important;
-    background-color: transparent !important;
+    color: black !important;
+    background-color: white !important;
 }
 
 input:hover, textarea:hover {
-    background-color: transparent !important;
-    border-color: #0da4e3;
+    background-color: white !important;
+    outline: solid 2px #0da4e3;
+    outline-offset: -2px;
 }
 
 input:active, textarea:active {
@@ -54,3 +55,4 @@ i:hover {
     margin-left: 10px;
     margin-right: 10px;
 }
+

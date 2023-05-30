@@ -24,7 +24,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
     <script src="https://kit.fontawesome.com/eff27b1688.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-dark">
+<body>
     <main-header active="produk_data"></main-header>
     <div class="container-fluid w-100 p-0" style="margin-top: 100px !important;position: absolute;">
         <div class="container mx-auto px-5 mt-1">
@@ -34,11 +34,11 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                 </li>
                 <li class="position-absolute end-0" style="display: inline-block;">
                     <a href="./produk_add.php">
-                        <button type="button" class="btn btn-success" style="font-size: 11pt !important;">Tambah Data</button>
+                        <button type="button" class="btn btn-success" style="font-size: 11pt !important;">+ Tambah</button>
                     </a>
                 </li>
             </ul>
-            <table class="table table-dark border-primary mt-3">
+            <table class="table border-primary mt-3" style="color: white">
                 <thead>
                     <tr>
                         <th scope="col">Nama</th>

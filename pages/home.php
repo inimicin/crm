@@ -26,7 +26,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
     <script src="https://kit.fontawesome.com/eff27b1688.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="bg-dark" style="position: relative;height: 100vh;">
+<body>
     <main-header active="home"></main-header>
     <div class="container-fluid w-100 p-0">
         <div class="container" style="width: fit-content;margin-bottom: 100px !important;">
@@ -39,7 +39,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                 <div class="col-6 mb-3 mb-sm-0">
                     <div class="card" style="width: 300px;">
                         <div class="card-body">
-                            <h5 class="card-title">Jumlah Produk</h5>
+                            <h5 class="card-title" style="color: #0da4e3">Jumlah Produk</h5>
                             <p class="card-text"><?= count(get_data_produk()) ?> Produk</p>
                             <a href="./produk_data.php" class="btn btn-primary">Lihat Data</a>
                         </div>
@@ -48,7 +48,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                 <div class="col-6">
                     <div class="card" style="width: 300px;">
                         <div class="card-body">
-                            <h5 class="card-title">Jumlah Customer</h5>
+                            <h5 class="card-title" style="color: #0da4e3">Jumlah Customer</h5>
                             <p class="card-text"><?= count(get_data_customer()) ?> Orang</p>
                             <a href="./customer_data.php" class="btn btn-primary">Lihat Data</a>
                         </div>
