@@ -1,7 +1,10 @@
 <?php
 
+include('../script/account.php');
+
 if (isset($_POST['submit'])) {
-  if($_POST['email_address'] === 'osmycin.amelia21@students.unila.ac.id' && $_POST['password'] === 'Osmycin14') {
+
+  if(auth($_POST['email_address'], $_POST['password'])) {
     header('location: ./home.php');
   }
 }
