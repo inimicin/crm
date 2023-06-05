@@ -1,7 +1,6 @@
 <?php
 
-include('../script/produk.php');
-include('../script/customer.php');
+include('../script/penjualan.php');
 
 session_start();
 
@@ -35,8 +34,8 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                     <h2 style="color: white;font-weight: bold;position: absolute;margin-top: 130px;transform: translate(-50%, 0);">Selamat Datang!</h2>
                 </li>
             </ul>
-            <div class="row" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
-                <div class="col-6 mb-3 mb-sm-0">
+            <div class="row w-75" style="position: absolute;top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                <div class="col-4 mb-3 mb-sm-0">
                     <div class="card" style="width: 300px;">
                         <div class="card-body">
                             <h5 class="card-title" style="color: #0da4e3">Jumlah Produk</h5>
@@ -45,12 +44,29 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-4">
                     <div class="card" style="width: 300px;">
                         <div class="card-body">
                             <h5 class="card-title" style="color: #0da4e3">Jumlah Customer</h5>
                             <p class="card-text"><?= count(get_data_customer()) ?> Orang</p>
                             <a href="./customer_data.php" class="btn btn-primary">Lihat Data</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="card" style="width: 300px;">
+                        <div class="card-body">
+                            <h5 class="card-title" style="color: #0da4e3">Total Pendapatan</h5>
+                            <p class="card-text">
+                                <?php
+                                    $transaksi = 0;
+                                    foreach (get_data_penjualan() as $record) {
+                                        $transaksi = $transaksi + ($record[4] * get_data_produk_by_id($record[2])[2]);
+                                    }
+                                    echo "Rp ".$transaksi;
+                                ?>
+                            </p>
+                            <a href="./penjualan_data.php" class="btn btn-primary">Lihat Data</a>
                         </div>
                     </div>
                 </div>
