@@ -16,8 +16,8 @@ function get_data_produk_by_id($id) {
     return mysqli_fetch_row($sql);
 }
 
-function save_data_produk($nama, $harga) {
-    $result = mysqli_query($GLOBALS['conn'], "INSERT INTO `produk`(`id_produk`, `nama_produk`, `harga_produk`) VALUES (NULL,'$nama','$harga');");
+function save_data_produk($nama, $harga, $stok) {
+    $result = mysqli_query($GLOBALS['conn'], "INSERT INTO `produk`(`id_produk`, `nama_produk`, `harga_produk`, `stok`) VALUES (NULL,'$nama','$harga', '$stok');");
 
     if($result) {
         return true;
@@ -26,8 +26,8 @@ function save_data_produk($nama, $harga) {
     }
 }
 
-function update_data_produk($id, $nama, $harga) {
-    $result = mysqli_query($GLOBALS['conn'], "UPDATE `produk` SET `nama_produk`='$nama',`harga_produk`='$harga' WHERE `id_produk`='$id';");
+function update_data_produk($id, $nama, $harga, $stok) {
+    $result = mysqli_query($GLOBALS['conn'], "UPDATE `produk` SET `nama_produk`='$nama',`harga_produk`='$harga',`stok`='$stok' WHERE `id_produk`='$id';");
 
     if($result) {
         return true;

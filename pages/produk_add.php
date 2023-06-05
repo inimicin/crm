@@ -8,7 +8,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
 }
 
 if(isset($_POST['submit'])) {
-    $status = save_data_produk($_POST['nama_produk'], $_POST['harga']);
+    $status = save_data_produk($_POST['nama_produk'], $_POST['harga'], $_POST['stok']);
 
     if($status) {
         header('location: ./produk_data.php');
@@ -50,6 +50,10 @@ if(isset($_POST['submit'])) {
                 <div class="mb-3">
                     <label for="harga" class="form-label" style="color: white;">Harga</label>
                     <input type="number" class="form-control" id="harga" name="harga">
+                </div>
+                <div class="mb-3">
+                    <label for="stok" class="form-label" style="color: white;">Stok</label>
+                    <input type="number" class="form-control" id="stok" name="stok">
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
             </form>

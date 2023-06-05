@@ -45,7 +45,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                         <th scope="col">Nama Customer</th>
                         <th scope="col">Nama Produk</th>
                         <th scope="col">Jumlah Produk</th>
-                        <th scope="col">Aksi</th>
+                        <!-- <th scope="col">Aksi</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -57,10 +57,10 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                             <td><?= get_data_customer_by_id($result[3])[1] ?> <?= get_data_customer_by_id($result[3])[2] ?></td>
                             <td><?= get_data_produk_by_id($result[2])[1] ?></td>
                             <td><?= $result[4] ?></td>
-                            <td>
+                            <!-- <td>
                                 <a href="./produk_edit.php?id=<?= $result[0] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a href="./produk_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></a>
-                            </td>
+                            </td> -->
                         </tr>
                     <?php
                     }

@@ -1,5 +1,5 @@
 <?php
-include('../script/produk.php');
+include('../script/penjualan.php');
 
 session_start();
 
@@ -43,6 +43,8 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                     <tr>
                         <th scope="col">Nama</th>
                         <th scope="col">Harga</th>
+                        <th scope="col">Stok</th>
+                        <th scope="col">Terjual</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -53,6 +55,16 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                         <tr>
                             <td><?= $result[1] ?></td>
                             <td>Rp. <?= $result[2] ?></td>
+                            <td><?= $result[3] ?></td>
+                            <td>
+                                <?php
+                                    $count = 0;
+                                    foreach (get_data_penjualan_by_produk($result[0]) as $record) {
+                                        $count = $count + $record[4];
+                                    }
+                                    echo $count;
+                                ?>
+                            </td>
                             <td>
                                 <a href="./produk_edit.php?id=<?= $result[0] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a href="./produk_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i class="fa-solid fa-trash"></i></a>
