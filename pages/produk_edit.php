@@ -10,7 +10,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
 $result = get_data_produk_by_id($_GET['id']);
 
 if(isset($_POST['submit'])) {
-    $status = update_data_produk($_GET['id'], $_POST['nama_produk'], $_POST['harga']);
+    $status = update_data_produk($_GET['id'], $_POST['nama_produk'], $_POST['harga'], $_POST['stok']);
 
     if($status) {
         header('location: ./produk_data.php');
@@ -52,6 +52,10 @@ if(isset($_POST['submit'])) {
                 <div class="mb-3">
                     <label for="harga" class="form-label" style="color: white;">Harga</label>
                     <input type="number" class="form-control" id="harga" name="harga" value="<?= $result[2] ?>">
+                </div>
+                <div class="mb-3">
+                    <label for="stok" class="form-label" style="color: white;">Stok</label>
+                    <input type="number" class="form-control" id="stok" name="stok" value="<?= $result[3] ?>" readonly>
                 </div>
                 <button type="submit" class="btn btn-primary" name="submit">Simpan</button>
             </form>

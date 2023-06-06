@@ -15,6 +15,13 @@ function get_data_customer_by_id($id) {
     return mysqli_fetch_row($sql);
 }
 
+function get_data_customer_by_email($email) {
+    $query = "SELECT * FROM `customer` WHERE `email`='$email'";
+    $sql = mysqli_query($GLOBALS['conn'], $query);
+
+    return mysqli_fetch_row($sql);
+}
+
 function save_data_customer($nama_depan, $nama_belakang, $email, $telepon, $alamat) {
     $result = mysqli_query($GLOBALS['conn'], "INSERT INTO `customer`(`id_customer`, `nama_depan`, `nama_belakang`, `email`, `no_telepon`, `alamat`) VALUES (NULL,'$nama_depan','$nama_belakang','$email','+62$telepon','$alamat');");
 

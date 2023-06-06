@@ -1,5 +1,5 @@
 <?php
-include('../script/customer.php');
+include('../script/penjualan.php');
 
 session_start();
 
@@ -35,11 +35,11 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                 <li style="display: inline-block;">
                     <h2 style="color: white;font-weight: bold;">Daftar Customer</h2>
                 </li>
-                <li class="position-absolute end-0" style="display: inline-block;">
+                <!-- <li class="position-absolute end-0" style="display: inline-block;">
                     <a href="./customer_add.php">
                         <button type="button" class="btn btn-success" style="font-size: 11pt !important;">+ Tambah</button>
                     </a>
-                </li>
+                </li> -->
             </ul>
             <table class="table border-primary mt-3" style="color: white;">
                 <thead>
@@ -48,6 +48,7 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                         <th scope="col">Email</th>
                         <th scope="col">No Telepon</th>
                         <th scope="col">Alamat</th>
+                        <th scope="col">Total Transaksi</th>
                         <th scope="col">Aksi</th>
                     </tr>
                 </thead>
@@ -66,10 +67,19 @@ if (!(session_status() == PHP_SESSION_ACTIVE && session_id() == "admin")) {
                                 <?= $result[5] ?>
                             </td>
                             <td>
+                                <?php
+                                $transaksi = 0;
+                                foreach(get_data_penjualan_by_customer($result[0]) as $record){
+                                    $transaksi = $transaksi + ($record[4] * get_data_produk_by_id($record[2])[2]);
+                                }
+                                echo "Rp ".$transaksi;
+                                ?>
+                            </td>
+                            <td>
                                 <a href="./customer_edit.php?id=<?= $result[0] ?>"><i
                                         class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="./customer_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i
-                                        class="fa-solid fa-trash"></i></a>
+                                <!-- <a href="./customer_delete.php?id=<?= $result[0] ?>" style="margin-left: 10px;"><i
+                                        class="fa-solid fa-trash"></i></a> -->
                             </td>
                         </tr>
                         <?php
